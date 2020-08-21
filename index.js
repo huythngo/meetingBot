@@ -1,9 +1,13 @@
 const fs = require('fs');
 const Discord = require('discord.js');
-const { token, prefix } = require('./config/config.json');
+// const { token, prefix, mongoURI } = require('./config/config.json');
+require('dotenv').config();
+
+const token = process.env.TOKEN;
+const prefix = process.env.PREFIX;
+const mongoURI = process.env.MONGO_URI;
 
 const mongoose = require('mongoose');
-const { mongoURI } = require('./config/config.json');
 
 const client = new Discord.Client({ disableEveryone: false });
 client.commands = new Discord.Collection();
@@ -13,6 +17,7 @@ const {
   callUpcomingMeetings,
   deletePastMeetings,
 } = require('./actions/UpcomingMeeting');
+const { Console } = require('console');
 
 const commandFiles = fs
   .readdirSync('./commands')

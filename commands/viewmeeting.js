@@ -1,8 +1,8 @@
 const { viewMeetingByUser } = require('../actions/Meeting');
 const { viewMeetingMsg } = require('../msgTemplate/EmbedMsg');
-const meeting = require('./meeting');
+
 module.exports = {
-  name: 'view my meeting',
+  name: 'viewmeeting',
   description: 'view all of your meetings!',
   args: false,
   cooldown: 5,

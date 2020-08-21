@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const validator = require('validator');
+
 const MeetingSchema = new Schema({
   user: {
     type: String,
